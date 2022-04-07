@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
-import Test from '../components/Test';
+import Test from '@components/Title';
 
 export default function Home(): ReactElement {
-  return (
-    <div>
-      <Test />
-    </div>
-  )
+    return (
+        <div>
+            <Test value="this is a title" />
+        </div>
+    );
 }
