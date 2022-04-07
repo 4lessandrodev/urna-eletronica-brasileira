@@ -38,6 +38,8 @@
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}],
+        "react/function-component-definition": "off"
     }
 }

@@ -1,5 +1,5 @@
-import "reflect-metadata";
-import { theme } from '../src/styles/theme';
+import React, { Suspense } from "react";
+import theme from '../src/styles/theme';
 import { ThemeProvider } from 'styled-components';
 
 export const decorators = [
