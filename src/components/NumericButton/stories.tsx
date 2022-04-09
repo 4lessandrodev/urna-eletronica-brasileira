@@ -14,11 +14,11 @@ export default {
 } as ComponentMeta<typeof NumericButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<any> = (args) => <NumericButton {...args} />;
+export const Button: ComponentStory<any> = (args) => <NumericButton {...args} />;
 
-export const Primary = Template.bind({});
+Button.bind({});
+
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-    primary: true,
+Button.args = {
     value: 1,
 };

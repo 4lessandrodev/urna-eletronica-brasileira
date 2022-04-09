@@ -17,6 +17,9 @@ const Style = styled.button`
     border-left: 0.3rem solid black;
     border-bottom: 0.3rem solid black;
     cursor: pointer;
+    &:hover {
+        background-color: black;
+    }
 `;
 
 interface Props {
