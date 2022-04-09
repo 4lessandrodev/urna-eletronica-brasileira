@@ -1,3 +1,7 @@
+# Urna Eletrônica Brasileira
+
+Um projetinho para simular a interface e o funcionamento da urna eletrônica brasileira.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
