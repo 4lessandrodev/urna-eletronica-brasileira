@@ -76,10 +76,14 @@ export interface ColorsType {
   green: string;
   /** 0E612D */
   darkGreen: string;
+  /** FF8B61 */
+  lightOrange: string;
   /** D76237 */
   orange: string;
   /** AA4D2B */
   darkOrange: string;
+  /** F5F3F3 */
+  lightGray: string;
   /** CCCCCC */
   gray: string;
   /** B4B7C0 */
