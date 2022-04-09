@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import '../src/styles/storybook.globals.css';
+import React from "react";
 import theme from '../src/styles/theme';
 import { ThemeProvider } from 'styled-components';
 
