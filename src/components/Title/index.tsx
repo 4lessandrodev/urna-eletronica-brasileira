@@ -1,9 +1,4 @@
-import styled from 'styled-components';
-import { ThemeProvider } from '@types';
-
-const Style = styled.h1`
-    color: ${({ theme }: ThemeProvider): string => theme.colors?.black87};
-`;
+import Style from './style';
 
 interface Props {
     value: string;
