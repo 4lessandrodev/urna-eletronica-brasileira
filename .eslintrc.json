@@ -40,6 +40,8 @@
         "react/jsx-indent-props": ["error", 4],
         "react/jsx-props-no-spreading": "off",
         "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}],
-        "react/function-component-definition": "off"
+        "react/function-component-definition": "off",
+        "import/extensions":"off",
+        "import/no-named-as-default": "off"
     }
 }
