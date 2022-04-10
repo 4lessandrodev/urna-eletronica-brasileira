@@ -98,6 +98,8 @@ export interface ColorsType {
   lightBlue241: string,
   /** C3D1EE */
   lightBlue240: string,
+  /** B6C1D8 */
+  lightBlue239: string,
   /** FFFFFF */
   white: string;
   /** 252930 */

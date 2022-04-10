@@ -43,6 +43,7 @@ export default {
         lightBlue242: '#D2E0FD',
         lightBlue241: '#CFD9F2',
         lightBlue240: '#C3D1EE',
+        lightBlue239: '#B6C1D8',
         white: '#FFFFFF',
         black81: '#252930',
         black87: '#161B20',
