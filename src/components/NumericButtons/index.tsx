@@ -1,7 +1,7 @@
 import NumericButton from '../NumericButton';
 import Style from './style';
 
-export default function CommandButtons() {
+export default function NumericButtons() {
     return (
         <Style>
             <NumericButton value={1} />

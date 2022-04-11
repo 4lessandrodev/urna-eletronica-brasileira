@@ -4,8 +4,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Component from '.';
 
 export default {
-    title: 'NUmericButtons',
+    title: 'NumericButtons',
     component: Component,
 } as ComponentMeta<typeof Component>;
 
-export const NUmericButtons: ComponentStory<any> = (args) => <Component {...args} />;
+export const NumericButtons: ComponentStory<any> = (args) => <Component {...args} />;

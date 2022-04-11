@@ -26,8 +26,10 @@ export const Style = styled.button<BtnColor>`
     color: ${({ theme }: ThemeProvider): string => theme.colors.black87};
     background-color: ${({ theme, color }: ThemeProvider & BtnColor): string => getColor(theme)[color]()};
     border-radius: ${({ theme }: ThemeProvider): string => theme.borderRadius.medium};
-    width: 7.2rem;
-    height: 3.3rem;
+    max-width: 7.2rem;
+    max-height: 3.3rem;
+    height: 100%;
+    width: 100%;
     padding-bottom: ${({ theme }: ThemeProvider): string => theme.spacings.small};
     font-family: ${({ theme }: ThemeProvider): string => theme.font.family.default};
     font-weight: ${({ theme }: ThemeProvider): string => theme.font.weights.semiBold};

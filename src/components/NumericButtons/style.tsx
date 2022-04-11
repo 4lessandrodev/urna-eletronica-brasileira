@@ -5,12 +5,11 @@ export const Style = styled.div`
     justify-content: space-around;
     align-items: stretch;
     width: 100%;
-    max-height: 18rem;
-    padding: 1rem;
-    max-width: 17rem;
+    max-height: 18rem; 
+    max-width: 15rem;
     background-color: #2d2d2d14;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 0.6rem;
 `;
 
 export default Style;

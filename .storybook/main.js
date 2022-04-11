@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require('webpack');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+// const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
   framework: "@storybook/react",
@@ -37,10 +37,10 @@ module.exports = {
       })
     }));
 
-    config.plugins.push(new TsconfigPathsPlugin({
-      configFile: path.resolve(__dirname, '..', './tsconfig.json'),
-      baseUrl: path.resolve(__dirname, '..'),
-    }));
+    // config.plugins.push(new TsconfigPathsPlugin({
+    //   configFile: path.resolve(__dirname, '..', './tsconfig.json'),
+    //   baseUrl: path.resolve(__dirname, '..'),
+    // }));
 
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|jpg)$/i,
@@ -56,14 +56,14 @@ module.exports = {
       ],
     });
 
-    // config.resolve.alias = {
-    //   "@components/*": path.resolve(__dirname, "..", "src", "components", "*"),
-    //   "@pages/*": path.resolve(__dirname, "..", "src", "components","*"),
-    //   "@components/*": path.resolve(__dirname, "..", "src", "pages", "*"),
-    //   "@styles/*": path.resolve(__dirname,"..", "src", "styles", "*"),
-    //   "@types": path.resolve(__dirname,"..", "src", "types", "index"),
-    //   ...config.resolve.alias,
-    // };
+    config.resolve.alias = {
+      "@components/*": path.resolve(__dirname, "..", "src", "components", "*"),
+      "@pages/*": path.resolve(__dirname, "..", "src", "components","*"),
+      "@components/*": path.resolve(__dirname, "..", "src", "pages", "*"),
+      "@styles/*": path.resolve(__dirname,"..", "src", "styles", "*"),
+      "@types": path.resolve(__dirname,"..", "src", "types", "index"),
+      ...config.resolve.alias,
+    };
     
     return config;
   },
