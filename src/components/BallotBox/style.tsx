@@ -71,6 +71,22 @@ export const ContainerScreen = styled.div`
     }
 `;
 
+export const LogoContainer = styled.div`
+    display: flex;
+    width: 100%;
+    height: 20%;
+    background-color: purple;
+    flex-direction: column;
+`;
+
+export const ContainerKeyBoardKeys = styled.div`
+    display: flex;
+    width: 100%;
+    height: 80%;
+    background-color: #004980;
+    flex-direction: column;
+`;
+
 export const ContainerKeyBoard = styled.div`                          
     display: flex;
     width: 40%;
@@ -79,9 +95,7 @@ export const ContainerKeyBoard = styled.div`
     justify-content: center;
     transform: rotateX(-3deg);
     align-items: center;
-    &::after{
-        content: "teclado";
-    }
+    flex-direction: column;
 `;
 
 export default Container;

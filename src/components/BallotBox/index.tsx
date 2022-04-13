@@ -4,9 +4,11 @@ import {
     Container,
     ContainerBallot,
     ContainerKeyBoard,
+    ContainerKeyBoardKeys,
     ContainerScreen,
     Content,
     InnerBorder,
+    LogoContainer,
 } from './style';
 
 export default function BallotBox() {
@@ -16,7 +18,10 @@ export default function BallotBox() {
                 <InnerBorder>
                     <ContainerBallot>
                         <ContainerScreen />
-                        <ContainerKeyBoard />
+                        <ContainerKeyBoard>
+                            <LogoContainer />
+                            <ContainerKeyBoardKeys />
+                        </ContainerKeyBoard>
                     </ContainerBallot>
                     <Base>
                         <Border />
