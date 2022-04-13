@@ -10,6 +10,9 @@ import {
     InnerBorder,
     LogoContainer,
 } from './style';
+import Screen from '../Screen';
+import Logo from '../Logo';
+import Keyboard from '../Keyboard';
 
 export default function BallotBox() {
     return (
@@ -17,10 +20,16 @@ export default function BallotBox() {
             <Content>
                 <InnerBorder>
                     <ContainerBallot>
-                        <ContainerScreen />
+                        <ContainerScreen>
+                            <Screen>{ }</Screen>
+                        </ContainerScreen>
                         <ContainerKeyBoard>
-                            <LogoContainer />
-                            <ContainerKeyBoardKeys />
+                            <LogoContainer>
+                                <Logo />
+                            </LogoContainer>
+                            <ContainerKeyBoardKeys>
+                                <Keyboard />
+                            </ContainerKeyBoardKeys>
                         </ContainerKeyBoard>
                     </ContainerBallot>
                     <Base>

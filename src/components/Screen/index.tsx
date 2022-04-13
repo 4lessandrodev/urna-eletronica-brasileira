@@ -4,7 +4,7 @@ import {
 } from './style';
 
 interface Props {
-	children: ReactComponentElement<any>
+	children: ReactComponentElement<any> | ReactComponentElement<any>[]
 }
 
 export default function Screen({ children }: Props) {

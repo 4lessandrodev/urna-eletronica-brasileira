@@ -5,8 +5,8 @@ import { ThemeProvider } from '@types';
 export const MainContainer = styled.div`
     display: flex;
     font-family: ${({ theme }: ThemeProvider): string => theme.font.family.default};
-    width: 24rem;
-    height: 15rem;
+    width: 35rem;
+    height: 25.5rem;
     border-radius: ${({ theme }: ThemeProvider): string => theme.borderRadius.medium};
     position: relative;
     perspective: 170px;
@@ -19,8 +19,8 @@ export const ScreenBorder = styled.div`
     position: absolute;
     background: ${({ theme }: ThemeProvider): string => theme.colors.darkGray};
     transform: rotateX(7deg);
-    width: 24.5rem;
-    height: 15.5rem;
+    width: 35.5rem;
+    height: 26rem;
     bottom: 4px;
     right: -4px;
     border-radius: ${({ theme }: ThemeProvider): string => theme.borderRadius.large};

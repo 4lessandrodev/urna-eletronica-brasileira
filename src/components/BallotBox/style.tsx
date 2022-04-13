@@ -5,10 +5,9 @@ export const Container = styled.div`
     display: flex;
     position: relative;
     background-color: ${({ theme }: ThemeProvider) => `${theme.colors.lightBlue242}`};
-    width: 32rem;
-    height: 21rem;
+    width: 58rem;
+    height: 33rem;
     perspective: 170px;
-    left: 30px;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
@@ -17,8 +16,8 @@ export const Container = styled.div`
 export const Content = styled.div`
     display: flex;
     position: absolute;
-    width: 35rem;
-    height: 20rem;
+    width: 66rem;
+    height: 30.5rem;
     transform: rotateX(3deg);
     justify-content: center;
     align-items: center;
@@ -45,7 +44,6 @@ export const Base = styled.div`
     display: flex;
     width: 100%;
     height: 5%;
-    border: 1px solid red;
 `;
 
 export const ContainerBallot = styled.div`
@@ -53,45 +51,38 @@ export const ContainerBallot = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
-    border: 1px solid blue;
     justify-content: center;
     perspective: 170px;
 `;
 
 export const ContainerScreen = styled.div`
     display: flex;
-    border: 1px solid red;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 63%;
     height: 100%;
     transform: rotateX(-3deg);
-    &::after{
-        content: "tela";
-    }
 `;
 
 export const LogoContainer = styled.div`
     display: flex;
     width: 100%;
-    height: 20%;
-    background-color: purple;
+    height: 27%;
     flex-direction: column;
+    margin-top: 2rem;
 `;
 
 export const ContainerKeyBoardKeys = styled.div`
     display: flex;
     width: 100%;
-    height: 80%;
-    background-color: #004980;
+    height: 73%;
     flex-direction: column;
 `;
 
 export const ContainerKeyBoard = styled.div`                          
     display: flex;
-    width: 40%;
+    width: 37%;
     height: 100%;
-    border: 1px solid black;
     justify-content: center;
     transform: rotateX(-3deg);
     align-items: center;

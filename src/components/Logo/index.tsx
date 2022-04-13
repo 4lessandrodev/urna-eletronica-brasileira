@@ -3,17 +3,13 @@ import PhotoHandler from '../PhotoHandler';
 import Title from '../Title';
 import Style, { Flex } from './style';
 
-interface Props {
-    src: string;
-}
-
-export default function Logo({ src }: Props) {
+export default function Logo() {
     return (
         <Style>
             <Flex>
                 <PhotoHandler
                     alt="logo"
-                    src={src}
+                    src="logo.png"
                     width={90}
                     height={90}
                     withBorder={false}
