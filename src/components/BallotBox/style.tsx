@@ -28,4 +28,60 @@ export const Content = styled.div`
     border: 0.1rem solid ${({ theme }: ThemeProvider) => `${theme.colors.darkGray}`};
 `;
 
+export const Border = styled.div`
+    width: 13.5%;
+    height: 100%;
+    border-right: 5px solid ${({ theme }: ThemeProvider) => `${theme.colors.black81}`};
+`;
+
+export const InnerBorder = styled.div`
+    display: flex;
+    width: 99%;
+    height: 99%;
+    flex-direction: column;
+`;
+
+export const Base = styled.div`
+    display: flex;
+    width: 100%;
+    height: 5%;
+    border: 1px solid red;
+`;
+
+export const ContainerBallot = styled.div`
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 1px solid blue;
+    justify-content: center;
+    perspective: 170px;
+`;
+
+export const ContainerScreen = styled.div`
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    transform: rotateX(-3deg);
+    &::after{
+        content: "tela";
+    }
+`;
+
+export const ContainerKeyBoard = styled.div`                          
+    display: flex;
+    width: 40%;
+    height: 100%;
+    border: 1px solid black;
+    justify-content: center;
+    transform: rotateX(-3deg);
+    align-items: center;
+    &::after{
+        content: "teclado";
+    }
+`;
+
 export default Container;
