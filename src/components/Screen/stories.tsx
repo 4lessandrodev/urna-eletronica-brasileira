@@ -9,7 +9,19 @@ export default {
     argTypes: { },
 } as ComponentMeta<typeof Components>;
 
-export const Screen: ComponentStory<any> = (args) => <Components {...args} />;
+export const Screen: ComponentStory<any> = (args) => (
+    <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '5%',
+        width: '100%',
+    }}
+    >
+        <div style={{ display: 'flex' }}>
+            <Components {...args} />
+        </div>
+    </div>
+);
 
 Screen.bind({});
 

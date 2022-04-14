@@ -12,10 +12,8 @@ export const BallotBox: ComponentStory<any> = (args) => (
     <div style={{
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '10%',
+        marginTop: '5%',
         width: '100%',
-        minWidth: '1448px',
-        minHeight: '700px',
     }}
     >
         <div style={{ display: 'flex' }}>
