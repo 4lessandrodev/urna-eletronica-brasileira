@@ -1,7 +1,9 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true,
+        "node": true
     },
     "settings": {
         "import/resolver": {
@@ -16,7 +18,8 @@
         "plugin:react/jsx-runtime",
         "plugin:import/recommended",
         "plugin:import/typescript",
-        "next"
+        "next",
+        "plugin:jest/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -29,7 +32,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jest"
     ],
     "rules": {
         "no-tabs": "off",
