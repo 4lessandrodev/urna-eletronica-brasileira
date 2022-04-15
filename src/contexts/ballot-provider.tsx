@@ -8,7 +8,15 @@ interface Props {
 
 export default function BallotBoxProvider({ children }: Props) {
     const [ballotBox, setBallotBox] = useState<IBallotBox>(ballotBoxDefault);
-    const context = useMemo((): IBallotContext => ({ ballotBox, setBallotBox }), [ballotBox]);
+    const [pressedNumbers, setPressedNumbers] = useState<number[]>([]);
+
+    const context = useMemo((): IBallotContext => ({
+        ballotBox,
+        setBallotBox,
+        pressedNumbers,
+        setPressedNumbers,
+    }), [ballotBox, pressedNumbers]);
+
     return (
         <BallotBoxContext.Provider value={context}>
             {children}
