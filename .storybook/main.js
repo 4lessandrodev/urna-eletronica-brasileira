@@ -62,6 +62,8 @@ module.exports = {
       "@components/*": path.resolve(__dirname, "..", "src", "pages", "*"),
       "@styles/*": path.resolve(__dirname,"..", "src", "styles", "*"),
       "@types": path.resolve(__dirname,"..", "src", "types", "index"),
+      "@contexts/*": path.resolve(__dirname,"..", "src", "contexts", "*"),
+      "@model/*": path.resolve(__dirname,"..", "src", "model", "*"),
       ...config.resolve.alias,
     };
     

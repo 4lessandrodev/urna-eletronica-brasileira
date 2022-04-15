@@ -51,6 +51,8 @@
     "@components/*": "components/*",
     "@pages/*": "pages/*",
     "@styles/*": "styles/*",
-    "@types": "types/index"
+    "@types": "types/index",
+    "@contexts/*": "contexts/*",
+    "@model/*": "model/*"
   }
 }

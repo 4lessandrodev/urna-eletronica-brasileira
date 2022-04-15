@@ -31,6 +31,12 @@
       ],
       "@types": [
         "src/types/index"
+      ],
+      "@contexts/*": [
+        "src/contexts/*"
+      ],
+      "@model/*": [
+        "src/model/*"
       ]
     }
   },
