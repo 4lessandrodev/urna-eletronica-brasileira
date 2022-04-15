@@ -1,5 +1,14 @@
 /* eslint-disable no-unused-vars */
 
+/**
+ * @description vote order
+ * @step 1 - DEPUTADO_FEDERAL
+ * @step 2 - DEPUTADO_ESTADUAL
+ * @step 3 - SENADOR_1
+ * @step 4 - SENADOR_2
+ * @step 5 - GOVERNADOR
+ * @step 6 - PRESIDENTE
+ */
 export const IPositions = {
     DEPUTADO_FEDERAL: 'DEPUTADO_FEDERAL',
     DEPUTADO_ESTADUAL: 'DEPUTADO_ESTADUAL',
@@ -27,18 +36,20 @@ export interface ICandidate {
 }
 
 export interface IVote {
-	candidate: Partial<ICandidate>;
+	candidate: Partial<ICandidate> & Pick<ICandidate, 'position'>;
 	isWhite: boolean;
 }
 
 export interface IBallotBox {
 	get quantityOfNumbers(): number;
-	get step(): IPosition | null;
-	confirm(vote: IVote): IBallotBox;
-	clear(): IBallotBox;
-    getCandidateByNumber(number: string): ICandidate;
+	get step(): IPosition;
     get votes(): Array<IVote>;
+	confirm(vote: IVote): IBallotBox;
+    clear(): IBallotBox;
+    getNextStep(): IPosition;
+    getCandidateByNumber(number: string): ICandidate;
     hasNextStep(): boolean;
+    alreadyVoteForPosition(position: IPosition): boolean;
 }
 
 export default IBallotBox;

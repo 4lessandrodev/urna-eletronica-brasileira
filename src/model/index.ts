@@ -9,13 +9,13 @@ import {
 
 interface IProps {
 	votes: IVote[];
-	currentStep: IPosition;
+    candidates: ICandidate[];
 }
 
 export class BallotBox implements IBallotBox {
     #votes: IVote[];
 
-    #currentStep: IPosition | null;
+    #currentStep: IPosition;
 
     #steps: Map<number, IPosition>;
 
@@ -30,16 +30,18 @@ export class BallotBox implements IBallotBox {
 	        steps.set(index, key as IPosition);
 	    });
 
-	    const lastStep = null;
-	    steps.set(steps.size + 1, lastStep as unknown as IPosition);
         this.#steps = steps;
-        const index = [...this.#steps.values()].findIndex((pos) => pos === props.currentStep);
-	    this.#currentStep = this.#steps.get(index) ?? null;
-	    this.#quantityOfNumbers = IQuantityNumbers[this.#currentStep as IPosition];
+        if (this.hasNextStep()) {
+            this.#currentStep = this.#steps.get(this.#votes.length) as IPosition;
+        } else {
+            this.#currentStep = this.#steps.get(this.#votes.length - 1) as IPosition;
+        }
+        this.#quantityOfNumbers = IQuantityNumbers[this.#currentStep as IPosition];
+        this.#candidates = props.candidates;
     }
 
     hasNextStep(): boolean {
-        return this.getNextStep(this.#currentStep as unknown as IPosition) !== null;
+        return this.#votes.length < this.#steps.size;
     }
 
     get votes(): IVote[] {
@@ -50,13 +52,13 @@ export class BallotBox implements IBallotBox {
 	    return this.#quantityOfNumbers;
     }
 
-    get step(): IPosition | null {
+    get step(): IPosition {
 	    return this.#currentStep;
     }
 
     getCandidateByNumber(number: string): ICandidate {
 	    const candidateFound = this.#candidates.find(
-	        (candidate) => candidate.number === number,
+	        (candidate): boolean => candidate.number === number,
 	    ) ?? {
 	        name: 'FULANO DE TAL',
 	        number,
@@ -66,29 +68,38 @@ export class BallotBox implements IBallotBox {
 	    return candidateFound as ICandidate;
     }
 
-    private getNextStep(position: IPosition): IPosition {
-        const steps = [...this.#steps.values()];
-        const currentIndex = steps.findIndex((value): boolean => value === position);
-        const nextStep = this.#steps.get(currentIndex + 1) ?? null;
+    getNextStep(): IPosition {
+        if (!this.hasNextStep()) return this.#currentStep;
+        const nextStep = this.#steps.get(this.#votes.length + 1);
         return nextStep as unknown as IPosition;
     }
 
+    alreadyVoteForPosition(position: IPosition): boolean {
+        const notFound = -1;
+        const index = this.#votes.findIndex(
+            (vote) => vote.candidate.position === position,
+        );
+        return index !== notFound;
+    }
+
     confirm(vote: IVote): IBallotBox {
+        if (this.alreadyVoteForPosition(vote.candidate.position)) return this;
 	    const votes = [...this.#votes, vote];
-        const nextStep = this.getNextStep(vote.candidate.position!);
 
 	    return new BallotBox({
-	        currentStep: nextStep,
-	        votes,
+            votes,
+            candidates: this.#candidates,
 	    });
     }
 
     clear(): IBallotBox {
-	    const votes = [...this.#votes];
+        const votes = [...this.#votes];
+
 	    votes.pop();
+
 	    return new BallotBox({
-	        currentStep: this.#currentStep as unknown as IPosition,
-	        votes,
+            votes,
+            candidates: this.#candidates,
 	    });
     }
 }
