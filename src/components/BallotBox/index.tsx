@@ -1,3 +1,4 @@
+import { useBallotBox } from '@contexts/ballot-context';
 import {
     Base,
     Border,
@@ -13,10 +14,12 @@ import {
 import Screen from '../Screen';
 import Logo from '../Logo';
 import Keyboard from '../Keyboard';
-// import Title from '../Title';
+import Title from '../Title';
 import ScreenInfo from '../ScreenInfo';
 
 export default function BallotBox() {
+    const { ballotBox } = useBallotBox();
+
     return (
         <Container>
             <Content>
@@ -24,8 +27,11 @@ export default function BallotBox() {
                     <ContainerBallot>
                         <ContainerScreen>
                             <Screen>
-                                {/* <Title value="fim" size="XLARGE" /> */}
-                                <ScreenInfo />
+                                {
+                                    ballotBox.hasNextStep()
+                                        ? <ScreenInfo />
+                                        : <Title value="fim" size="XLARGE" />
+                                }
                             </Screen>
                         </ContainerScreen>
                         <ContainerKeyBoard>

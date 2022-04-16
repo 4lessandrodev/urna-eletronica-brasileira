@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import PhotoHandler from '../PhotoHandler';
 import InputNumber from '../InputNumber';
 import Title from '../Title';
@@ -16,10 +16,11 @@ export default function ScreenInfo() {
         ballotBox,
         pressedNumbers,
         inputsNumber,
+        image,
+        name,
+        group,
         setInputsNumber,
     } = useBallotBox();
-    const [name, setName] = useState<string>('');
-    const [group, setGroup] = useState<string>('');
 
     const handleInput = (): void => {
         const totalInput = ballotBox.quantityOfNumbers;
@@ -52,23 +53,26 @@ export default function ScreenInfo() {
                     <Title size="REGULAR" value="Partido: " />
                     <Title size="REGULAR" value={group} />
                 </ContentRow>
-                <ContentColumn>
-                    <Info>
-                        <Title size="MEDIUM" value="Verde: " />
-                        <Title size="MEDIUM" value="Confirmar" />
-                    </Info>
-                    <Info>
-                        <Title size="MEDIUM" value="Laranja: " />
-                        <Title size="MEDIUM" value="Corrigir" />
-                    </Info>
-                </ContentColumn>
+                {inputsNumber.length === pressedNumbers.length
+                    && (
+                        <ContentColumn>
+                            <Info>
+                                <Title size="MEDIUM" value="Verde: " />
+                                <Title size="MEDIUM" value="Confirmar" />
+                            </Info>
+                            <Info>
+                                <Title size="MEDIUM" value="Laranja: " />
+                                <Title size="MEDIUM" value="Corrigir" />
+                            </Info>
+                        </ContentColumn>
+                    )}
             </ScreenInfoData>
             <ScreenInfoImage>
                 <PhotoHandler
                     alt="image"
                     height={250}
                     width={240}
-                    src="image.jpg"
+                    src={image}
                     withBorder
                 />
             </ScreenInfoImage>

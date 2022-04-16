@@ -14,7 +14,13 @@ export interface IBallotContext {
     pressedNumbers: number[];
     setPressedNumbers: Dispatch<SetStateAction<number[]>>;
     inputsNumber: ReactElement[];
-    setInputsNumber:Dispatch<SetStateAction<ReactElement[]>>;
+    setInputsNumber: Dispatch<SetStateAction<ReactElement[]>>;
+    name: string,
+    setName: Dispatch<SetStateAction<string>>,
+    group: string,
+    setGroup: Dispatch<SetStateAction<string>>,
+    image: string,
+    setImage: Dispatch<SetStateAction<string>>,
 }
 
 export const ballotBoxDefault = new BallotBox({ candidates: [], votes: [] });
@@ -25,7 +31,13 @@ const BallotBoxContext = createContext<IBallotContext>({
     pressedNumbers: [],
     setPressedNumbers: () => {},
     inputsNumber: [],
-    setInputsNumber: () => {},
+    setInputsNumber: () => { },
+    name: '',
+    setName: () => { },
+    group: '',
+    setGroup: () => { },
+    image: 'no-image.png',
+    setImage: () => { },
 });
 
 export function useBallotBox(): IBallotContext {

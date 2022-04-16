@@ -15,6 +15,9 @@ export default function BallotBoxProvider({ children }: Props) {
     const [ballotBox, setBallotBox] = useState<IBallotBox>(ballotBoxDefault);
     const [pressedNumbers, setPressedNumbers] = useState<number[]>([]);
     const [inputsNumber, setInputsNumber] = useState<ReactElement[]>([]);
+    const [name, setName] = useState<string>('');
+    const [group, setGroup] = useState<string>('');
+    const [image, setImage] = useState<string>('no-image.png');
 
     const context = useMemo((): IBallotContext => ({
         ballotBox,
@@ -23,7 +26,20 @@ export default function BallotBoxProvider({ children }: Props) {
         setPressedNumbers,
         inputsNumber,
         setInputsNumber,
-    }), [ballotBox, pressedNumbers, inputsNumber]);
+        name,
+        setName,
+        group,
+        setGroup,
+        image,
+        setImage,
+    }), [
+        ballotBox,
+        pressedNumbers,
+        inputsNumber,
+        name,
+        group,
+        image,
+    ]);
 
     return (
         <BallotBoxContext.Provider value={context}>
