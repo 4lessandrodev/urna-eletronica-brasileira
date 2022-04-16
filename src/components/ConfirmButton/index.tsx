@@ -22,20 +22,14 @@ export default function ConfirmButton({ value }: Props) {
 
     const handleConfirm = (): void => {
         const currentTotal = ballotBox.quantityOfNumbers;
-        if (pressedNumbers.length === currentTotal) {
-            const result: ReactElement[] = [];
-            let i = 0;
-            while (i <= currentTotal) {
-                result.push(<InputNumber key={`${i}${Math.random()}`} value="" />);
-                i += 1;
-            }
-
+        const isWhite = name.toLowerCase() === 'branco';
+        if (pressedNumbers.length === currentTotal || isWhite) {
             const number = pressedNumbers.toString().replace(/,/g, '');
             const candidate = ballotBox.getCandidateByNumber(number);
             const { position } = candidate;
 
             const vote = ballotBox.confirm({
-                isWhite: false,
+                isWhite,
                 candidate: {
                     position,
                     name,
@@ -43,6 +37,13 @@ export default function ConfirmButton({ value }: Props) {
                 },
             });
             setBallotBox(vote);
+
+            const result: ReactElement[] = [];
+            while (result.length < vote.quantityOfNumbers) {
+                const index = result.length;
+                result.push(<InputNumber key={`${index}${Math.random()}`} value="" />);
+            }
+
             setInputsNumber(result);
             setPressedNumbers([]);
             setImage('no-image.png');

@@ -16,8 +16,8 @@ export default function Logo() {
                 />
             </Flex>
             <Flex>
-                <Title value="justiça" />
-                <Title value="eleitoral" />
+                <Title value="justiça" size="REGULAR" />
+                <Title value="eleitoral" size="REGULAR" />
             </Flex>
         </Style>
     );

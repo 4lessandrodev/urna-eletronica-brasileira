@@ -25,10 +25,10 @@ export default function ScreenInfo() {
     const handleInput = (): void => {
         const totalInput = ballotBox.quantityOfNumbers;
         const result: ReactElement[] = [];
-        let i = 0;
-        while (i < totalInput) {
-            result.push(<InputNumber key={`${i}${Math.random()}`} value={pressedNumbers[i]} />);
-            i += 1;
+
+        while (result.length < totalInput) {
+            const index = result.length;
+            result.push(<InputNumber key={`${index}${Math.random()}`} value={pressedNumbers[index]} />);
         }
         setInputsNumber(result);
     };
