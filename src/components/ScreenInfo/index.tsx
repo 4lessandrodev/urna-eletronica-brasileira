@@ -1,3 +1,4 @@
+import { ReactElement, useState } from 'react';
 import PhotoHandler from '../PhotoHandler';
 import InputNumber from '../InputNumber';
 import Title from '../Title';
@@ -8,29 +9,48 @@ import Style, {
     ScreenInfoData,
     ScreenInfoImage,
 } from './style';
+import { useBallotBox } from '../../contexts/ballot-context';
 
 export default function ScreenInfo() {
+    const {
+        ballotBox,
+        pressedNumbers,
+        inputsNumber,
+        setInputsNumber,
+    } = useBallotBox();
+    const [name, setName] = useState<string>('');
+    const [group, setGroup] = useState<string>('');
+
+    const handleInput = (): void => {
+        const totalInput = ballotBox.quantityOfNumbers;
+        const result: ReactElement[] = [];
+        let i = 0;
+        while (i <= totalInput) {
+            result.push(<InputNumber key={`${i}${Math.random()}`} value={pressedNumbers[i]} />);
+            i += 1;
+        }
+        setInputsNumber(result);
+    };
+
+    const removeSlash = (value: string) => value.replace(/_/, ' ');
+
     return (
-        <Style>
+        <Style onLoad={handleInput}>
             <ScreenInfoData>
                 <ContentRow position="START">
                     <Title size="REGULAR" value="Cargo: " />
-                    <Title size="REGULAR" value="Presidente" />
+                    <Title size="REGULAR" value={removeSlash(ballotBox.step)} />
                 </ContentRow>
                 <ContentRow position="CENTER">
-                    <InputNumber value={1} />
-                    <InputNumber value={2} />
-                    <InputNumber value={3} />
-                    <InputNumber value={4} />
-                    <InputNumber value={5} />
+                    {inputsNumber}
                 </ContentRow>
                 <ContentRow position="CENTER">
                     <Title size="REGULAR" value="Nome: " />
-                    <Title size="REGULAR" value="Fulano" />
+                    <Title size="REGULAR" value={name} />
                 </ContentRow>
                 <ContentRow position="START">
                     <Title size="REGULAR" value="Partido: " />
-                    <Title size="REGULAR" value="abc" />
+                    <Title size="REGULAR" value={group} />
                 </ContentRow>
                 <ContentColumn>
                     <Info>

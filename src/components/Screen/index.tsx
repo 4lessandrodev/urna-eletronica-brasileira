@@ -1,6 +1,9 @@
 import { ReactComponentElement } from 'react';
 import {
-    MainContainer, ScreenBorder, ScreenContainer, MainScreen,
+    MainContainer,
+    ScreenBorder,
+    ScreenContainer,
+    MainScreen,
 } from './style';
 
 interface Props {

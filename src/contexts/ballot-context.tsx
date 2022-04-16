@@ -1,5 +1,9 @@
 import {
-    createContext, Dispatch, SetStateAction, useContext,
+    createContext,
+    Dispatch,
+    ReactElement,
+    SetStateAction,
+    useContext,
 } from 'react';
 import BallotBox from '../model/index';
 import IBallotBox from '../model/ballot-box.interface';
@@ -9,6 +13,8 @@ export interface IBallotContext {
     setBallotBox: Dispatch<SetStateAction<IBallotBox>>;
     pressedNumbers: number[];
     setPressedNumbers: Dispatch<SetStateAction<number[]>>;
+    inputsNumber: ReactElement[];
+    setInputsNumber:Dispatch<SetStateAction<ReactElement[]>>;
 }
 
 export const ballotBoxDefault = new BallotBox({ candidates: [], votes: [] });
@@ -18,7 +24,8 @@ const BallotBoxContext = createContext<IBallotContext>({
     setBallotBox: () => ballotBoxDefault,
     pressedNumbers: [],
     setPressedNumbers: () => {},
-
+    inputsNumber: [],
+    setInputsNumber: () => {},
 });
 
 export function useBallotBox(): IBallotContext {

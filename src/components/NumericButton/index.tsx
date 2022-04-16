@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import InputNumber from '../InputNumber';
 import { useBallotBox } from '../../contexts/ballot-context';
 import Style from './style';
 
@@ -7,16 +8,33 @@ interface Props {
 }
 
 export default function NumericButton({ value }: Props) {
-    const { pressedNumbers, setPressedNumbers } = useBallotBox();
+    const {
+        pressedNumbers,
+        setPressedNumbers,
+        inputsNumber,
+        setInputsNumber,
+        ballotBox,
+    } = useBallotBox();
+
+    const handlePressedNumber = (target: HTMLElement) => {
+        const currentTotal = ballotBox.quantityOfNumbers;
+        if (pressedNumbers.length <= currentTotal) {
+            const newNumber = parseInt(target.innerText, 10);
+            const inputs = [...inputsNumber];
+            const numbers = [...pressedNumbers, newNumber];
+
+            inputs[numbers.length - 1] = <InputNumber key={`${newNumber}${Math.random()}`} value={newNumber} />;
+
+            setPressedNumbers(numbers);
+            setInputsNumber(inputs);
+        }
+    };
 
     return (
         <Style onClick={
             (e: MouseEvent) => {
                 const target = e.target as HTMLElement;
-                const numbers = [...pressedNumbers, parseInt(target.innerText, 10)];
-                setPressedNumbers(numbers);
-                console.log(pressedNumbers);
-                console.log(numbers);
+                handlePressedNumber(target);
             }
         }
         >
