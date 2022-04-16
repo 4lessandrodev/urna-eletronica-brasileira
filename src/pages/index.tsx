@@ -1,20 +1,15 @@
 import BallotBox from '@components/BallotBox';
+import AuthorUrl from '@components/Link';
+import { Container, Wrapper } from '@components/Templates';
 import { ReactElement } from 'react';
 
 export default function Home(): ReactElement {
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '5%',
-            width: '100%',
-            minWidth: '1448px',
-            minHeight: '700px',
-        }}
-        >
-            <div style={{ display: 'flex' }}>
+        <Container>
+            <Wrapper>
                 <BallotBox />
-            </div>
-        </div>
+                <AuthorUrl />
+            </Wrapper>
+        </Container>
     );
 }
