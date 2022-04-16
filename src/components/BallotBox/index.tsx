@@ -13,7 +13,8 @@ import {
 import Screen from '../Screen';
 import Logo from '../Logo';
 import Keyboard from '../Keyboard';
-import Title from '../Title';
+// import Title from '../Title';
+import ScreenInfo from '../ScreenInfo';
 
 export default function BallotBox() {
     return (
@@ -23,7 +24,8 @@ export default function BallotBox() {
                     <ContainerBallot>
                         <ContainerScreen>
                             <Screen>
-                                <Title value="fim" size="XLARGE" />
+                                {/* <Title value="fim" size="XLARGE" /> */}
+                                <ScreenInfo />
                             </Screen>
                         </ContainerScreen>
                         <ContainerKeyBoard>

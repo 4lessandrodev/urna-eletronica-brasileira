@@ -13,7 +13,7 @@ export default function ScreenInfo() {
     return (
         <Style>
             <ScreenInfoData>
-                <ContentRow position="CENTER">
+                <ContentRow position="START">
                     <Title size="REGULAR" value="Cargo: " />
                     <Title size="REGULAR" value="Presidente" />
                 </ContentRow>

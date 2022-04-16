@@ -20,7 +20,6 @@ export const Style = styled.div`
     min-height: 100%;
     max-width: 35rem;
     background-color: transparent;
-    border: 1px solid red;
     padding: 2%;
 `;
 
