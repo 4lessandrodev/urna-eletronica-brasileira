@@ -1,4 +1,9 @@
-import { useBallotBox } from '@contexts/ballot-context';
+import { useBallotBox } from '../../contexts/ballot-context';
+import Screen from '../Screen';
+import Logo from '../Logo';
+import Keyboard from '../Keyboard';
+import Title from '../Title';
+import ScreenInfo from '../ScreenInfo';
 import {
     Base,
     Border,
@@ -11,11 +16,6 @@ import {
     InnerBorder,
     LogoContainer,
 } from './style';
-import Screen from '../Screen';
-import Logo from '../Logo';
-import Keyboard from '../Keyboard';
-import Title from '../Title';
-import ScreenInfo from '../ScreenInfo';
 
 export default function BallotBox() {
     const { ballotBox } = useBallotBox();
