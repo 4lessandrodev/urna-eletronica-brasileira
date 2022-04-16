@@ -7,6 +7,7 @@ import {
 } from 'react';
 import BallotBox from '../model/index';
 import IBallotBox from '../model/ballot-box.interface';
+import candidates from '../data/index';
 
 export interface IBallotContext {
     ballotBox: IBallotBox;
@@ -23,7 +24,7 @@ export interface IBallotContext {
     setImage: Dispatch<SetStateAction<string>>,
 }
 
-export const ballotBoxDefault = new BallotBox({ candidates: [], votes: [] });
+export const ballotBoxDefault = new BallotBox({ candidates, votes: [] });
 
 const BallotBoxContext = createContext<IBallotContext>({
     ballotBox: ballotBoxDefault,

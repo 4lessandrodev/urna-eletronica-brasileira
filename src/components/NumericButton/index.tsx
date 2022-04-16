@@ -24,7 +24,7 @@ export default function NumericButton({ value }: Props) {
 
         audio.play();
         const currentTotal = ballotBox.quantityOfNumbers;
-        if (pressedNumbers.length <= currentTotal) {
+        if (pressedNumbers.length < currentTotal) {
             const newNumber = parseInt(target.innerText, 10);
             const inputs = [...inputsNumber];
             const numbers = [...pressedNumbers, newNumber];
@@ -38,8 +38,8 @@ export default function NumericButton({ value }: Props) {
                 numbers.forEach((num) => { number += num; });
                 const candidate = ballotBox.getCandidateByNumber(number);
                 setName(candidate.name);
-                setGroup('Partido x');
-                setImage('image.jpg');
+                setGroup(candidate.group);
+                setImage(candidate.image);
             }
         }
     };

@@ -178,10 +178,14 @@ describe('ballot-box', () => {
             name: 'FULANO DE TAL 1',
             number: '01',
             position: 'GOVERNADOR',
+            image: 'image.jpg',
+            group: 'none',
         }, {
             name: 'FULANO DE TAL 2',
             number: '02',
             position: 'GOVERNADOR',
+            image: 'image.jpg',
+            group: 'none',
         }];
         const instance = new BallotBox({ votes: [], candidates: candidatesList });
         const result = instance.getCandidateByNumber('01');

@@ -57,12 +57,16 @@ export class BallotBox implements IBallotBox {
     }
 
     getCandidateByNumber(number: string): ICandidate {
+        const random = Math.trunc(Math.random() * this.#candidates.length);
+
 	    const candidateFound = this.#candidates.find(
 	        (candidate): boolean => candidate.number === number,
 	    ) ?? {
-	        name: 'FULANO DE TAL',
+	        name: this.#candidates[random].name,
 	        number,
-	        position: this.#currentStep,
+            position: this.#currentStep,
+            group: this.#candidates[random].group,
+            image: this.#candidates[random].image,
 	    };
 
 	    return candidateFound as ICandidate;

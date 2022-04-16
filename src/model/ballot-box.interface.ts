@@ -32,7 +32,9 @@ export type IPosition = keyof typeof IPositions;
 export interface ICandidate {
 	name: string;
 	number: string;
-	position: IPosition;
+    position: IPosition;
+    image: string;
+    group: string;
 }
 
 export interface IVote {
