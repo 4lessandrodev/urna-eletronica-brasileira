@@ -14,6 +14,9 @@ export default function NumericButton({ value }: Props) {
         inputsNumber,
         setInputsNumber,
         ballotBox,
+        setName,
+        setGroup,
+        setImage,
     } = useBallotBox();
 
     const handlePressedNumber = (target: HTMLElement) => {
@@ -27,6 +30,14 @@ export default function NumericButton({ value }: Props) {
 
             setPressedNumbers(numbers);
             setInputsNumber(inputs);
+            if (numbers.length === currentTotal) {
+                let number = '';
+                numbers.forEach((num) => { number += num; });
+                const candidate = ballotBox.getCandidateByNumber(number);
+                setName(candidate.name);
+                setGroup('Partido x');
+                setImage('image.jpg');
+            }
         }
     };
 
