@@ -38,6 +38,10 @@ export default function ConfirmButton({ value }: Props) {
             });
             setBallotBox(vote);
 
+            const isFinal = vote.hasNextStep();
+            const audio = new Audio(isFinal ? '/assets/bip.aac' : '/assets/confirmation.mp3');
+            audio.play();
+
             const result: ReactElement[] = [];
             while (result.length < vote.quantityOfNumbers) {
                 const index = result.length;

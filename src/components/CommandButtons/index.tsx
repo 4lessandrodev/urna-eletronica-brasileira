@@ -18,6 +18,9 @@ export default function CommandButtons() {
     } = useBallotBox();
 
     const handleWhiteCommand = () => {
+        const audio = new Audio('/assets/bip.aac');
+        audio.play();
+
         const totalNumber = ballotBox.quantityOfNumbers;
 
         const inputs: ReactElement[] = [];
@@ -33,7 +36,11 @@ export default function CommandButtons() {
     };
 
     const handleOrangeCommand = () => {
+        const audio = new Audio('/assets/bip.aac');
+        audio.play();
+
         const totalNumber = ballotBox.quantityOfNumbers;
+
         if (inputsNumber.length > 0) {
             const newInputs: ReactElement[] = [];
             const numbers = [...pressedNumbers];

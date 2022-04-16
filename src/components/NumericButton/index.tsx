@@ -20,6 +20,9 @@ export default function NumericButton({ value }: Props) {
     } = useBallotBox();
 
     const handlePressedNumber = (target: HTMLElement) => {
+        const audio = new Audio('/assets/bip.aac');
+
+        audio.play();
         const currentTotal = ballotBox.quantityOfNumbers;
         if (pressedNumbers.length <= currentTotal) {
             const newNumber = parseInt(target.innerText, 10);
