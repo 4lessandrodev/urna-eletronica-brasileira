@@ -1,6 +1,6 @@
 import { ReactComponentElement, useMemo, useState } from 'react';
-import BallotBoxContext, { ballotBoxDefault, IBallotContext } from '@contexts/ballot-context';
-import IBallotBox from '@model/ballot-box.interface';
+import BallotBoxContext, { ballotBoxDefault, IBallotContext } from './ballot-context';
+import IBallotBox from '../model/ballot-box.interface';
 
 interface Props {
 	children: ReactComponentElement<any> | ReactComponentElement<any>[]

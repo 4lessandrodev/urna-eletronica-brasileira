@@ -1,11 +1,11 @@
-import Style from './style';
+import Style, { ITitleSizes } from './style';
 
-interface Props {
+interface Props extends ITitleSizes {
     value: string;
 }
 
-export default function Title({ value }: Props) {
+export default function Title({ value, size }: Props) {
     return (
-        <Style>{ value }</Style>
+        <Style size={size}>{ value }</Style>
     );
 }

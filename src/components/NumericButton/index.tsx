@@ -1,5 +1,5 @@
-import { useBallotBox } from '@contexts/ballot-context';
 import { MouseEvent } from 'react';
+import { useBallotBox } from '../../contexts/ballot-context';
 import Style from './style';
 
 interface Props {

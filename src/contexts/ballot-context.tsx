@@ -1,8 +1,8 @@
 import {
     createContext, Dispatch, SetStateAction, useContext,
 } from 'react';
-import BallotBox from '@model/index';
-import IBallotBox from '@model/ballot-box.interface';
+import BallotBox from '../model/index';
+import IBallotBox from '../model/ballot-box.interface';
 
 export interface IBallotContext {
     ballotBox: IBallotBox;
