@@ -6,6 +6,6 @@ interface Props {
 
 export default function InputNumber({ value }: Props) {
     return (
-        <Style type="text" value={value} max={9} min={0} />
+        <Style type="text" value={value} max={9} min={0} readOnly />
     );
 }

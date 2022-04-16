@@ -26,6 +26,7 @@ export default function PhotoHandler({
                 src={src}
                 width={width}
                 height={height}
+                objectFit="cover"
             />
         </Style>
     );
