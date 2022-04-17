@@ -2,11 +2,15 @@
 
 Um projetinho para simular a interface e o funcionamento da urna eletrônica brasileira.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Regra de negócio testada e aprovada
 
-## Getting Started
+Testes realizados para validar o fluxo de negócio.
 
-First, run the development server:
+<img src="./readme/tests.png" width="100%" alt="testes">
+
+### Primeiros passos
+
+Primeiro, execute seu servidor
 
 ```bash
 npm run dev

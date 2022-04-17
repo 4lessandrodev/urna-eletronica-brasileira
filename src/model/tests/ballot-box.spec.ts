@@ -1,5 +1,6 @@
 import { ICandidate, IPosition, IVote } from '../ballot-box.interface';
 import BallotBox from '../index';
+import fakeCandidates from '../../data/index';
 
 describe('ballot-box', () => {
     const candidates: ICandidate[] = [];
@@ -131,12 +132,9 @@ describe('ballot-box', () => {
     });
 
     it('should get fake candidate if none exists', () => {
-        const instance = new BallotBox({ votes: [], candidates });
-        expect(instance.getCandidateByNumber('2021')).toEqual({
-            name: 'FULANO DE TAL',
-            number: '2021',
-            position: 'DEPUTADO_FEDERAL',
-        });
+        const instance = new BallotBox({ votes: [], candidates: fakeCandidates });
+        const result = instance.getCandidateByNumber('2021');
+        expect(Object.keys(result)).toEqual(['name', 'number', 'position', 'group', 'image']);
     });
 
     it('should return the same instance if try to vote 2 times for the same candidate', () => {
