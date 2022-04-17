@@ -27,7 +27,7 @@ const candidates: ICandidate[] = [
         group: 'Meme',
         position: 'PRESIDENTE',
         image: 'image-3.png',
-        number: '17',
+        number: '21',
     },
     {
         name: 'Willy Wonka',
@@ -62,7 +62,7 @@ const candidates: ICandidate[] = [
         group: 'BARMY',
         position: 'PRESIDENTE',
         image: 'image-8.png',
-        number: '13',
+        number: '07',
     },
     {
         name: 'Boneca',
