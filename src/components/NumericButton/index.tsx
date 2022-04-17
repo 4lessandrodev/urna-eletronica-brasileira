@@ -25,6 +25,9 @@ export default function NumericButton({ value }: Props) {
         audio.play();
         const currentTotal = ballotBox.quantityOfNumbers;
         if (pressedNumbers.length < currentTotal) {
+            setName('');
+            setGroup('');
+            setImage('no-image.png');
             const newNumber = parseInt(target.innerText, 10);
             const inputs = [...inputsNumber];
             const numbers = [...pressedNumbers, newNumber];

@@ -53,7 +53,9 @@ export default function ScreenInfo() {
                     <Title size="REGULAR" value="Partido: " />
                     <Title size="REGULAR" value={group} />
                 </ContentRow>
-                {inputsNumber.length === pressedNumbers.length
+                {(
+                    (inputsNumber.length === pressedNumbers.length)
+                    || (name.toLowerCase() === 'branco'))
                     && (
                         <ContentColumn>
                             <Info>
